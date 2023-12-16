@@ -32,6 +32,11 @@ class CachedIPv4Address(IPv4Address):
         """Return True if this is a loopback address."""
         return super().is_loopback
 
+    @cached_property
+    def is_multicast(self) -> bool:  # type: ignore[override]
+        """Return True if this is a multicast address."""
+        return super().is_multicast
+
 
 class CachedIPv6Address(IPv6Address):
     def __str__(self) -> str:
@@ -57,6 +62,11 @@ class CachedIPv6Address(IPv6Address):
     def is_loopback(self) -> bool:  # type: ignore[override]
         """Return True if this is a loopback address."""
         return super().is_loopback
+
+    @cached_property
+    def is_multicast(self) -> bool:  # type: ignore[override]
+        """Return True if this is a multicast address."""
+        return super().is_multicast
 
 
 @lru_cache(maxsize=512)
