@@ -1,6 +1,7 @@
 """Functools backports from standard lib."""
 from __future__ import annotations
 
+import sys
 from collections.abc import Callable
 from types import GenericAlias
 from typing import Any, Generic, TypeVar, overload
@@ -69,4 +70,13 @@ class cached_property(Generic[_T]):  # pylint: disable=invalid-name
             raise TypeError(msg) from None
         return val
 
-    __class_getitem__ = classmethod(GenericAlias)  # type: ignore
+    if sys.version_info >= (3, 9):
+        __class_getitem__ = classmethod(GenericAlias)  # type: ignore
+    else:
+
+        def __class_getitem__(
+            cls: type[cached_property],
+            cls_item: Any,
+        ) -> type[cached_property]:
+            """Get item."""
+            return cls
