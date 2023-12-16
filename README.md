@@ -35,6 +35,14 @@
 
 Cache construction of ipaddress objects
 
+## Design
+
+This module keeps a cache of IPAddress objects and caches the properties on them.
+
+It it useful when you frequently see the same ip addresses over and over and
+do not want to pay the overhead of constructing IPAddress objects over and over
+or checking their properties.
+
 ## Installation
 
 Install this via pip (or your favourite package manager):
@@ -43,10 +51,14 @@ Install this via pip (or your favourite package manager):
 
 ## Usage
 
-Start by importing it:
-
 ```python
-import cached_ipaddress
+from cached_ipaddress import cached_ip_addresses
+
+ip = cached_ip_addresses("127.0.0.1")
+assert ip.is_loopback is False
+
+invalid = cached_ip_addresses("invalid")
+assert invalid is None
 ```
 
 ## Contributors ✨
