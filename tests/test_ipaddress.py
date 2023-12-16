@@ -30,12 +30,14 @@ def test_cached_ip_addresses_wrapper():
     assert ipv4.is_link_local is False
     assert ipv4.is_unspecified is True
     assert ipv4.is_loopback is False
+    assert ipv4.is_multicast is False
 
     ipv6 = ipaddress.cached_ip_addresses("fe80::1")
     assert ipv6 is not None
     assert ipv6.is_link_local is True
     assert ipv6.is_unspecified is False
     assert ipv6.is_loopback is False
+    assert ipv6.is_multicast is False
 
     ipv6 = ipaddress.cached_ip_addresses("0:0:0:0:0:0:0:0")
     assert ipv6 is not None
