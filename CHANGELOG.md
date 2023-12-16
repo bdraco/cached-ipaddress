@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.0 (2023-12-16)
+
+### Feature
+
+- Add is_multicast to the list of cached properties (#3) ([`b5f4941`](https://github.com/bdraco/cached-ipaddress/commit/b5f4941b83dc983bab88bf04a0bcf8a5bc7c60af))
+
 ## v0.1.0 (2023-12-16)
 
 ### Feature
