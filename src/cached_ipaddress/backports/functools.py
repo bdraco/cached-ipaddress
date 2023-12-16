@@ -2,8 +2,8 @@
 from __future__ import annotations
 
 import sys
+import types
 from collections.abc import Callable
-from types import GenericAlias
 from typing import Any, Generic, TypeVar, overload
 
 _T = TypeVar("_T")
@@ -71,7 +71,7 @@ class cached_property(Generic[_T]):  # pylint: disable=invalid-name
         return val
 
     if sys.version_info >= (3, 9):
-        __class_getitem__ = classmethod(GenericAlias)  # type: ignore
+        __class_getitem__ = classmethod(types.GenericAlias)  # type: ignore
     else:
 
         def __class_getitem__(
