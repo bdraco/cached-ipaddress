@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.0 (2023-12-17)
+
+### Feature
+
+- Add reverse_pointer to the cache (#4) ([`98f7ae3`](https://github.com/bdraco/cached-ipaddress/commit/98f7ae3d1e5b3c03f34392093257594915e55d2a))
+
 ## v0.2.0 (2023-12-16)
 
 ### Feature
