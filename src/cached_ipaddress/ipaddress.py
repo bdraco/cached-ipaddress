@@ -37,6 +37,11 @@ class CachedIPv4Address(IPv4Address):
         """Return True if this is a multicast address."""
         return super().is_multicast
 
+    @cached_property
+    def reverse_pointer(self) -> str:  # type: ignore[override]
+        """Return the reverse DNS pointer name for the IPv4 address."""
+        return super().reverse_pointer
+
 
 class CachedIPv6Address(IPv6Address):
     def __str__(self) -> str:
@@ -68,8 +73,13 @@ class CachedIPv6Address(IPv6Address):
         """Return True if this is a multicast address."""
         return super().is_multicast
 
+    @cached_property
+    def reverse_pointer(self) -> str:  # type: ignore[override]
+        """Return the reverse DNS pointer name for the IPv6 address."""
+        return super().reverse_pointer
 
-@lru_cache(maxsize=512)
+
+@lru_cache(maxsize=535)
 def _cached_ip_addresses(
     address: Union[str, bytes, int]
 ) -> Optional[Union[IPv4Address, IPv6Address]]:

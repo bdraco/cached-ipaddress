@@ -24,6 +24,7 @@ def test_cached_ip_addresses_wrapper():
     assert ipv4.is_loopback is False
     assert str(ipv4) == "169.254.0.0"
     assert str(ipv4) == "169.254.0.0"
+    assert ipv4.reverse_pointer == "0.0.254.169.in-addr.arpa"
 
     ipv4 = ipaddress.cached_ip_addresses("0.0.0.0")  # noqa: S104
     assert ipv4 is not None
@@ -38,6 +39,10 @@ def test_cached_ip_addresses_wrapper():
     assert ipv6.is_unspecified is False
     assert ipv6.is_loopback is False
     assert ipv6.is_multicast is False
+    assert (
+        ipv6.reverse_pointer
+        == "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa"
+    )
 
     ipv6 = ipaddress.cached_ip_addresses("0:0:0:0:0:0:0:0")
     assert ipv6 is not None
