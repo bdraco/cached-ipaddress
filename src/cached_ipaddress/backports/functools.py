@@ -1,4 +1,5 @@
 """Functools backports from standard lib."""
+
 from __future__ import annotations
 
 import sys
@@ -33,12 +34,10 @@ class cached_property(Generic[_T]):  # pylint: disable=invalid-name
             )
 
     @overload
-    def __get__(self, instance: None, owner: type[Any] | None = None) -> Any:
-        ...
+    def __get__(self, instance: None, owner: type[Any] | None = None) -> Any: ...
 
     @overload
-    def __get__(self, instance: Any, owner: type[Any] | None = None) -> _T:
-        ...
+    def __get__(self, instance: Any, owner: type[Any] | None = None) -> _T: ...
 
     def __get__(self, instance: Any | None, owner: type[Any] | None = None) -> _T | Any:
         """Get."""
