@@ -12,6 +12,7 @@ class CachedIPv4Address(IPv4Address):
     def __init__(self, address: Any) -> None:
         super().__init__(address)
         self.__hash__ = cache(lambda: IPv4Address.__hash__(self))  # type: ignore[method-assign]
+        self.__int__ = cache(lambda: IPv4Address.__int__(self))  # type: ignore[method-assign]
 
     def __str__(self) -> str:
         """Return the string representation of the IPv4 address."""
@@ -53,6 +54,7 @@ class CachedIPv6Address(IPv6Address):
     def __init__(self, address: Any) -> None:
         super().__init__(address)
         self.__hash__ = cache(lambda: IPv6Address.__hash__(self))  # type: ignore[method-assign]
+        self.__int__ = cache(lambda: IPv6Address.__int__(self))  # type: ignore[method-assign]
 
     def __str__(self) -> str:
         """Return the string representation of the IPv6 address."""
