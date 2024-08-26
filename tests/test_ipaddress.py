@@ -1,5 +1,7 @@
 """Unit tests for cached_ipaddress.ipaddress."""
 
+from ipaddress import IPv4Address, IPv6Address
+
 from cached_ipaddress import ipaddress
 
 
@@ -50,3 +52,6 @@ def test_cached_ip_addresses_wrapper():
     assert ipv6.is_unspecified is True
     assert ipv6.is_loopback is False
     assert str(ipv6) == "::"
+
+    assert hash(ipv4) == hash(IPv4Address(str(ipv4)))
+    assert hash(ipv6) == hash(IPv6Address(str(ipv6)))
