@@ -1,10 +1,16 @@
 """Base implementation."""
 
-from functools import cache, lru_cache
+import sys
+from functools import lru_cache
 from ipaddress import AddressValueError, IPv4Address, IPv6Address, NetmaskValueError
 from typing import Any, Optional, Union
 
 from .backports.functools import cached_property
+
+if sys.version_info < (3, 9):
+    cache = lru_cache(maxsize=None)
+else:
+    from functools import cache
 
 
 class CachedIPv4Address(IPv4Address):
