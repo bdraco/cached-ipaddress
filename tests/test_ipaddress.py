@@ -55,3 +55,5 @@ def test_cached_ip_addresses_wrapper():
 
     assert hash(ipv4) == hash(IPv4Address(str(ipv4)))
     assert hash(ipv6) == hash(IPv6Address(str(ipv6)))
+    assert int(ipv4) == int(IPv4Address(str(ipv4)))
+    assert int(ipv6) == int(IPv6Address(str(ipv6)))
