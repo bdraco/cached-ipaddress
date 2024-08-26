@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.5.0 (2024-08-26)
+
+### Feature
+
+- Add python version classifiers (#17) ([`c87a639`](https://github.com/bdraco/cached-ipaddress/commit/c87a639f7d5d7f14ab62a8c7f072bd48440acf27))
+
 ## v0.4.0 (2024-08-26)
 
 ### Feature
