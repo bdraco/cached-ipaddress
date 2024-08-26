@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.0 (2024-08-26)
+
+### Feature
+
+- Python 3.13 support (#16) ([`75a01d4`](https://github.com/bdraco/cached-ipaddress/commit/75a01d4c5b6e3ee336a3f0e101a5df71510ffb9c))
+- Cache hash as well (#15) ([`282a8ad`](https://github.com/bdraco/cached-ipaddress/commit/282a8ad722d8ee09cc3961f85f989e90a93093ee))
+
 ## v0.3.0 (2023-12-17)
 
 ### Feature
