@@ -54,6 +54,11 @@ class CachedIPv4Address(IPv4Address):
         """Return the reverse DNS pointer name for the IPv4 address."""
         return super().reverse_pointer
 
+    @cached_property
+    def compressed(self) -> str:  # type: ignore[override]
+        """Return the compressed value IPv4 address."""
+        return super().compressed
+
 
 class CachedIPv6Address(IPv6Address):
 
@@ -95,6 +100,11 @@ class CachedIPv6Address(IPv6Address):
     def reverse_pointer(self) -> str:  # type: ignore[override]
         """Return the reverse DNS pointer name for the IPv6 address."""
         return super().reverse_pointer
+
+    @cached_property
+    def compressed(self) -> str:  # type: ignore[override]
+        """Return the compressed value IPv6 address."""
+        return super().compressed
 
 
 @lru_cache(maxsize=535)
