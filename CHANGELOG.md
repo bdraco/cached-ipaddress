@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.6.0 (2024-09-23)
+
+### Feature
+
+- Add cache for compressed (#22) ([`4afea62`](https://github.com/bdraco/cached-ipaddress/commit/4afea62ac571fb79859cbe174dccf250d704fc04))
+
 ## v0.5.0 (2024-08-26)
 
 ### Feature
