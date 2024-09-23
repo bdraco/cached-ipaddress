@@ -34,6 +34,7 @@ def test_cached_ip_addresses_wrapper():
     assert ipv4.is_unspecified is True
     assert ipv4.is_loopback is False
     assert ipv4.is_multicast is False
+    assert ipv4.compressed == IPv4Address(str(ipv4)).compressed
 
     ipv6 = ipaddress.cached_ip_addresses("fe80::1")
     assert ipv6 is not None
@@ -57,3 +58,4 @@ def test_cached_ip_addresses_wrapper():
     assert hash(ipv6) == hash(IPv6Address(str(ipv6)))
     assert int(ipv4) == int(IPv4Address(str(ipv4)))
     assert int(ipv6) == int(IPv6Address(str(ipv6)))
+    assert ipv6.compressed == IPv6Address(str(ipv6)).compressed
