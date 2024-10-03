@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.0 (2024-10-03)
+
+### Feature
+
+- Switch from stdlib cached_property to propcache cached_property (#25) ([`217d978`](https://github.com/bdraco/cached-ipaddress/commit/217d978f812ebdcfd0a964ff432be4d075deaaf6))
+
 ## v0.6.0 (2024-09-23)
 
 ### Feature
