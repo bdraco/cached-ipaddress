@@ -5,7 +5,7 @@ from functools import lru_cache
 from ipaddress import AddressValueError, IPv4Address, IPv6Address, NetmaskValueError
 from typing import Any, Optional, Union
 
-from .backports.functools import cached_property
+from propcache import cached_property
 
 if sys.version_info < (3, 9):
     cache = lru_cache(maxsize=None)
@@ -30,32 +30,32 @@ class CachedIPv4Address(IPv4Address):
         return super().__str__()
 
     @cached_property
-    def is_link_local(self) -> bool:  # type: ignore[override]
+    def is_link_local(self) -> bool:
         """Return True if this is a link-local address."""
         return super().is_link_local
 
     @cached_property
-    def is_unspecified(self) -> bool:  # type: ignore[override]
+    def is_unspecified(self) -> bool:
         """Return True if this is an unspecified address."""
         return super().is_unspecified
 
     @cached_property
-    def is_loopback(self) -> bool:  # type: ignore[override]
+    def is_loopback(self) -> bool:
         """Return True if this is a loopback address."""
         return super().is_loopback
 
     @cached_property
-    def is_multicast(self) -> bool:  # type: ignore[override]
+    def is_multicast(self) -> bool:
         """Return True if this is a multicast address."""
         return super().is_multicast
 
     @cached_property
-    def reverse_pointer(self) -> str:  # type: ignore[override]
+    def reverse_pointer(self) -> str:
         """Return the reverse DNS pointer name for the IPv4 address."""
         return super().reverse_pointer
 
     @cached_property
-    def compressed(self) -> str:  # type: ignore[override]
+    def compressed(self) -> str:
         """Return the compressed value IPv4 address."""
         return super().compressed
 
@@ -77,32 +77,32 @@ class CachedIPv6Address(IPv6Address):
         return super().__str__()
 
     @cached_property
-    def is_link_local(self) -> bool:  # type: ignore[override]
+    def is_link_local(self) -> bool:
         """Return True if this is a link-local address."""
         return super().is_link_local
 
     @cached_property
-    def is_unspecified(self) -> bool:  # type: ignore[override]
+    def is_unspecified(self) -> bool:
         """Return True if this is an unspecified address."""
         return super().is_unspecified
 
     @cached_property
-    def is_loopback(self) -> bool:  # type: ignore[override]
+    def is_loopback(self) -> bool:
         """Return True if this is a loopback address."""
         return super().is_loopback
 
     @cached_property
-    def is_multicast(self) -> bool:  # type: ignore[override]
+    def is_multicast(self) -> bool:
         """Return True if this is a multicast address."""
         return super().is_multicast
 
     @cached_property
-    def reverse_pointer(self) -> str:  # type: ignore[override]
+    def reverse_pointer(self) -> str:
         """Return the reverse DNS pointer name for the IPv6 address."""
         return super().reverse_pointer
 
     @cached_property
-    def compressed(self) -> str:  # type: ignore[override]
+    def compressed(self) -> str:
         """Return the compressed value IPv6 address."""
         return super().compressed
 
