@@ -5,7 +5,7 @@ from functools import lru_cache
 from ipaddress import AddressValueError, IPv4Address, IPv6Address, NetmaskValueError
 from typing import Any, Optional, Union
 
-from propcache import cached_property
+from ._compat import cached_property
 
 if sys.version_info < (3, 9):
     cache = lru_cache(maxsize=None)
