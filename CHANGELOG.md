@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.8.0 (2024-10-06)
+
+### Feature
+
+- Add support for propcache v1.0.0+ (#26) ([`f5ac45b`](https://github.com/bdraco/cached-ipaddress/commit/f5ac45bb3c82c38f989494a26b7a773b807c16a2))
+
 ## v0.7.0 (2024-10-03)
 
 ### Feature
