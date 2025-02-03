@@ -109,7 +109,7 @@ class CachedIPv6Address(IPv6Address):
 
 @lru_cache(maxsize=535)
 def _cached_ip_addresses(
-    address: Union[str, bytes, int]
+    address: Union[str, bytes, int],
 ) -> Optional[Union[IPv4Address, IPv6Address]]:
     """Cache IP addresses."""
     try:
